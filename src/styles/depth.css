@@ -1,0 +1,157 @@
+/* Dimensional project deck */
+.project-list {
+    border-top: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    perspective: 1200px
+}
+
+.project {
+    min-height: 405px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: linear-gradient(140deg, #10221b, #091510 68%);
+    transform-style: preserve-3d;
+    transition: transform .45s cubic-bezier(.2, .8, .2, 1), border-color .45s, box-shadow .45s
+}
+
+.project:nth-child(2) {
+    background: linear-gradient(145deg, #122018, #0d1110 70%);
+    transform: translateY(30px) rotateX(2deg)
+}
+
+.project:nth-child(3) {
+    background: linear-gradient(155deg, #151d15, #07120f 70%)
+}
+
+.project:hover {
+    transform: translateY(-13px) rotateX(5deg) rotateY(-5deg);
+    border-color: rgba(200, 255, 87, .75);
+    box-shadow: 20px 27px 0 rgba(200, 255, 87, .1), 0 30px 55px rgba(0, 0, 0, .35)
+}
+
+.project:nth-child(2):hover {
+    transform: translateY(17px) rotateX(5deg) rotateY(-5deg)
+}
+
+.card-glow {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -65px;
+    top: -65px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 255, 87, .3), transparent 68%);
+    transition: transform .6s
+}
+
+.project:hover .card-glow {
+    transform: scale(1.8)
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.status {
+    font: 8px 'DM Mono';
+    color: var(--acid);
+    border: 1px solid rgba(200, 255, 87, .26);
+    padding: 6px 8px;
+    text-transform: uppercase
+}
+
+.project-main {
+    margin-top: auto;
+    transform: translateZ(28px)
+}
+
+.project-description {
+    margin: 25px 0;
+    transform: translateZ(18px)
+}
+
+.project-bottom {
+    margin-top: auto;
+    transform: translateZ(34px)
+}
+
+.toolkit {
+    border-top: 1px solid var(--line);
+    padding-top: 145px
+}
+
+.toolkit h2 {
+    font-size: clamp(46px, 5.5vw, 76px);
+    letter-spacing: -.07em;
+    line-height: .9;
+    margin: 0
+}
+
+.tech-cloud {
+    margin-top: 75px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 34px 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+.tech-cloud span {
+    font: 500 clamp(19px, 2.1vw, 31px) 'DM Mono';
+    letter-spacing: -.08em;
+    color: #718078;
+    border: 1px solid var(--line);
+    padding: 13px 16px;
+    transition: .25s
+}
+
+.tech-cloud span:hover,
+.tech-cloud .tech-featured {
+    color: var(--night);
+    background: var(--acid);
+    border-color: var(--acid);
+    transform: rotate(-3deg) translateY(-5px)
+}
+
+@media(max-width:720px) {
+    .project-list {
+        grid-template-columns: 1fr;
+        gap: 16px
+    }
+
+    .project,
+    .project:nth-child(2) {
+        min-height: 340px;
+        transform: none
+    }
+
+    .project:hover,
+    .project:nth-child(2):hover {
+        transform: translateY(-7px)
+    }
+
+    .toolkit {
+        padding-top: 90px
+    }
+
+    .tech-cloud {
+        margin-top: 45px;
+        padding: 24px 0;
+        gap: 7px
+    }
+
+    .tech-cloud span {
+        font-size: 17px;
+        padding: 10px
+    }
+}

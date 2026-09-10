@@ -1,0 +1,146 @@
+/* Physical card planes create depth without a reflective sweep. */
+.project {
+    --base-y: 0px;
+    --base-x-rotation: 0deg;
+    --tilt-x: 0deg;
+    --tilt-y: 0deg;
+    --move-x: 0px;
+    --move-y: 0px;
+    overflow: visible;
+    isolation: isolate;
+    will-change: transform;
+    transform: translate3d(var(--move-x), calc(var(--base-y) + var(--move-y)), 0) rotateX(calc(var(--base-x-rotation) + var(--tilt-x))) rotateY(var(--tilt-y)) !important;
+    transition: border-color .18s ease, box-shadow .18s ease !important;
+    box-shadow: 15px 18px 0 #070711, 28px 34px 40px rgba(0, 0, 0, .34)
+}
+
+.project:nth-child(2) {
+    --base-y: 30px;
+    --base-x-rotation: 2deg
+}
+
+.project:before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    border: 1px solid rgba(125, 211, 252, .18);
+    background: #080811;
+    transform: translate3d(21px, 24px, -48px);
+    box-shadow: inset 0 0 28px rgba(167, 139, 250, .13)
+}
+
+.project:after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    pointer-events: none;
+    border: 1px solid rgba(188, 174, 255, .08);
+    box-shadow: inset 0 0 45px rgba(125, 211, 252, .03);
+    transform: translateZ(16px) !important;
+    transition: none !important
+}
+
+.project .card-top {
+    transform: translateZ(56px)
+}
+
+.project .project-main {
+    transform: translateZ(72px)
+}
+
+.project .project-description {
+    transform: translateZ(46px)
+}
+
+.project .project-bottom {
+    transform: translateZ(82px)
+}
+
+.project:hover {
+    padding: 25px;
+    border-color: rgba(168, 139, 250, .95);
+    box-shadow: 22px 30px 0 #070711, 40px 52px 66px rgba(0, 0, 0, .48)
+}
+
+.status {
+    border: 0 !important;
+    padding: 0 !important;
+    color: #c4b5fd !important;
+    letter-spacing: .1em
+}
+
+.status:before {
+    content: '•';
+    color: #7dd3fc;
+    font-size: 14px;
+    vertical-align: -1px;
+    margin-right: 5px
+}
+
+.role-cycle strong {
+    min-width: 0 !important;
+    white-space: nowrap
+}
+
+.role-cycle {
+    gap: 8px
+}
+
+.social-links {
+    gap: 8px
+}
+
+.social-icon {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(196, 181, 253, .28);
+    color: #d8d1fa !important;
+    transition: transform .2s ease, color .2s ease, border-color .2s ease, background .2s ease !important
+}
+
+.social-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor
+}
+
+.social-icon:hover {
+    color: #0c0c16 !important;
+    background: #a78bfa;
+    border-color: #a78bfa;
+    transform: translateY(-4px) rotate(-5deg) !important
+}
+
+.resume-link {
+    color: #9edcff !important;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(158, 220, 255, .65);
+    padding-bottom: 4px;
+    transition: color .2s ease, border-color .2s ease !important
+}
+
+.resume-link:hover {
+    color: #fff !important;
+    border-color: #fff
+}
+
+.hero-resume {
+    font: 12px 'DM Mono';
+    padding: 11px 2px;
+    white-space: nowrap
+}
+
+@media(max-width:720px) {
+    .project {
+        --base-y: 0px !important;
+        --base-x-rotation: 0deg !important;
+        box-shadow: 10px 13px 0 #070711, 18px 25px 35px rgba(0, 0, 0, .32)
+    }
+
+    .project:before {
+        transform: translate3d(9px, 11px, -25px)
+    }
+}
