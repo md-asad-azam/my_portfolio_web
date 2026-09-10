@@ -15,37 +15,37 @@ Personal portfolio built with Astro, React islands, Tailwind CSS, Framer Motion,
 
 Clone the repo and install dependencies:
 
-\`\`\`bash
+```bash
 git clone https://github.com/md-asad-azam/my_portfolio_web.git
 cd my_portfolio_web
 npm install
-\`\`\`
+```
 
 Run the dev server:
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 Site runs at `http://localhost:4321`.
 
 ## Build
 
-\`\`\`bash
+```bash
 npm run build      # outputs to dist/
 npm run preview    # preview the production build locally
-\`\`\`
+```
 
 ## Project Structure
 
-\`\`\`
+```
 src/
 ├── components/     # Astro + React components
 ├── layouts/        # Base page layout
 ├── pages/          # Routes (index.astro)
 ├── styles/         # Global CSS
 └── data/           # Project content (projects.ts)
-\`\`\`
+```
 
 ## Deployment
 
@@ -55,3 +55,4 @@ Deployed on Vercel — auto-deploys on push to `main`.
 
 - [brittanychiang.com](https://brittanychiang.com/)
 - [lenis.dev](https://lenis.dev/)
+---
